@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const startButton = document.querySelector("#start-button");
     const displayPlayerChoice = document.querySelector(".display-player-choice");
     const displayComputerChoice = document.querySelector(".display-computer-choice");
-    const result = document.querySelector("#result");   
+    const result = document.querySelector("#result");
 
     function getComputerChoice() {
         let computerChoice = Math.floor(Math.random() * 3) + 1;
@@ -44,11 +44,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function showWinner() {
         result.textContent = playRound();
+        let playAgainContainer = document.querySelector(".play-again-container");
+        
+        if (!playAgainContainer.querySelector("button")) {
+            let playAgainButton = document.createElement("button");
+            playAgainButton.innerHTML = 'Play Again';
+            playAgainButton.id = 'play-again';
+            playAgainContainer.appendChild(playAgainButton);
+        }
+            playAgainContainer.querySelector("button").addEventListener('click', () => {
+                showWinner();
+        })
+    
     }
+
 
     // User interface starts here
     startButton.addEventListener('click', () => {
+        startButton.style.display = 'none';
         showWinner();
     })
-    
 });

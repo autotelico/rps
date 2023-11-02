@@ -4,13 +4,31 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rock Paper Scissors</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js"></script>
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js"></script>
 </head>
 <body>
-  <button id="start-button">Start</button>
-  <p class="display-player-choice"></p>
-  <p class="display-computer-choice"></p>
-  <p id="result"></p>
+  <audio id="background-music" autoplay loop>
+    <source src="./music/funky-night.mp3" type="audio/mpeg">
+  </audio>
+  <div class="header">
+    <h1 id="header-title">Rock Paper Scissors</h1>
+  </div>
+  <div class="game-display">
+    <button id="start-button">Start</button>
+    <div class="text-wrap">
+      <p class="display-player-choice"></p>
+    </div>
+    <div class="text-wrap">
+      <p class="display-computer-choice"></p>
+    </div>
+    <div class="text-wrap">
+      <p id="result"></p>
+    </div>
+    <div class="play-again-container"></div>
+  </div>
+  <div class="footer">
+    <p><a href="https://github.com/autotelico" target="_blank">Developed by: Henrique Heron © 2023</a></p>
+  </div>
 </body>
 </html>
