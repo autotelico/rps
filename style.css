@@ -70,7 +70,6 @@ div.header {
 .game-display .player-option {
     display: none;
     cursor: pointer;
-    /* transform: translate(0px, 150px); */
     font-size: 3em;
     background: #93C48B;
     border: 5px solid;
