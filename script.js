@@ -1,62 +1,51 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const playerSelection = document.querySelector("#player-selection-text"); 
-  const computerSelection = document.querySelector("#computer-selection");
-  const startButton = document.querySelector("#start-button");
+    const startButton = document.querySelector("#start-button");
+    const computerChoice = getComputerChoice();
+    const result = document.querySelector("#result");   
 
-  const bgMusic = document.querySelector("#background-music");
-  const toggleMusicButton = document.querySelector("#toggle-music-button");
-  let musicPlaying = true;
+    function getComputerChoice() {
+        let computerChoice = Math.floor(Math.random() * 3) + 1;
+        switch (computerChoice) {
+            case 1:
+                return 'rock';
+            case 2:
+                return 'paper';
+            case 3:
+                return 'scissors';
+        }
+    }
 
-  const playerOption = document.querySelectorAll(".player-option");
-  const rockButton = document.querySelector("#rock");
-  const paperButton = document.querySelector("#paper");
-  const scissorsButton = document.querySelector("#scissors");
+    function getPlayerChoice() {
+        let playerChoice = prompt("Choose: ");
+        playerChoice = playerChoice.toLowerCase().trim();
+        return playerChoice;
+    }
 
-  function getComputerChoice() {
-      computerSelection = Math.floor(Math.random() * 3) + 1;
-      switch (computerSelection) {
-          case 1:
-              return "Rock";
-          case 2:
-              return "Paper";
-          case 3:
-              return "Scissors";
-      }
-  }
-  
-  startButton.addEventListener('click', () => {
-      startButton.style.display = 'none';
-      startGame();
-  });
+    
+    
 
-  function startGame() {
-      playerOption.forEach(button => {
-          button.style.display = 'inline-block';
-      });
-  }
+    function playRound() {
+        let playerChoice = getPlayerChoice();
+        let computerChoice = getComputerChoice();
+        if (playerChoice === computerChoice) {
+            return 'Draw.';
+        } else if (playerChoice === 'rock' && computerChoice === 'scissors'
+        || playerChoice === 'scissors' && computerChoice === 'paper'
+        || playerChoice === 'paper' && computerChoice === 'rock') {
+            return `You win! ${playerChoice} beats ${computerChoice}.`;
+        } else {
+            return `You lose. ${computerChoice} beats ${playerChoice}.`;
+        }
+    }
 
-  playerOption.forEach(button => {
-      button.addEventListener('click', () => {
-          getPlayerChoice();
-      });
-  });
+    function showWinner() {
+        result.textContent = playRound();
+    }
 
-  function getPlayerChoice() {
-      playerOption.forEach(button => {
-          button.addEventListener('click', () => {
-              playerSelection = button.id;
-          });
-      });
-  }
-
-  toggleMusicButton.addEventListener('click', () => {
-      if (musicPlaying) {
-          bgMusic.pause();
-          musicPlaying = false;
-      } else {
-          bgMusic.currentTime = 0;
-          bgMusic.play();
-          musicPlaying = true;
-      }
-  });
+    // User interface starts here
+    startButton.addEventListener('click', () => {
+        playRound();
+        showWinner();
+    })
+    
 });
