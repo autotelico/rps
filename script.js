@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const displayPlayerChoice = document.querySelector(".display-player-choice");
     const displayComputerChoice = document.querySelector(".display-computer-choice");
     const result = document.querySelector("#result");
-    let bgMusic = document.querySelector("#background-music");
+    const bgMusic = document.querySelector("#background-music");
     const toggleMusicButton = document.querySelector("#toggle-music-button");
     let musicPlaying = true;
 

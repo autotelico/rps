@@ -102,7 +102,6 @@ div.header {
 
 #toggle-music-button {
     cursor: pointer;
-    /* transform: translate(350px, 200px); */
     margin-top: 40vh;
     margin-left: 45vw;
     position: fixed;
