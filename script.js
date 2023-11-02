@@ -5,6 +5,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const displayComputerChoice = document.querySelector(".display-computer-choice");
     const result = document.querySelector("#result");
     const bgMusic = document.querySelector("#background-music");
+    const toggleMusicButton = document.querySelector("#toggle-music-button");
+    let musicPlaying = true;
 
     setTimeout(() => {
         if (bgMusic) {
@@ -71,5 +73,17 @@ document.addEventListener("DOMContentLoaded", () => {
     startButton.addEventListener('click', () => {
         startButton.style.display = 'none';
         showWinner();
+    })
+
+    toggleMusicButton.addEventListener('click', () => {
+        if (musicPlaying) {
+            bgMusic.pause();
+            toggleMusicButton.src = "./images/no-music-icon.png";
+        } else {
+            bgMusic.currentTime = 0;
+            bgMusic.play();
+            toggleMusicButton.src = "./images/music-icon.png";
+        }
+        musicPlaying = !musicPlaying;
     })
 });
