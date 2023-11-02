@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     const startButton = document.querySelector("#start-button");
-    const computerChoice = getComputerChoice();
+    const displayPlayerChoice = document.querySelector(".display-player-choice");
+    const displayComputerChoice = document.querySelector(".display-computer-choice");
     const result = document.querySelector("#result");   
 
     function getComputerChoice() {
@@ -26,7 +27,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function playRound() {
         let playerChoice = getPlayerChoice();
+        displayPlayerChoice.textContent = `You chose "${playerChoice}"`;
         let computerChoice = getComputerChoice();
+        displayComputerChoice.textContent = `Computer chose "${computerChoice}"`;
+
         if (playerChoice === computerChoice) {
             return 'Draw.';
         } else if (playerChoice === 'rock' && computerChoice === 'scissors'
@@ -44,7 +48,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // User interface starts here
     startButton.addEventListener('click', () => {
-        playRound();
         showWinner();
     })
     
