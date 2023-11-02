@@ -4,15 +4,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const displayPlayerChoice = document.querySelector(".display-player-choice");
     const displayComputerChoice = document.querySelector(".display-computer-choice");
     const result = document.querySelector("#result");
-    const bgMusic = document.querySelector("#background-music");
+    let bgMusic = document.querySelector("#background-music");
     const toggleMusicButton = document.querySelector("#toggle-music-button");
     let musicPlaying = true;
-
-    setTimeout(() => {
-        if (bgMusic) {
-            bgMusic.volume = 0.5;}
-        }, 1000);
-    
 
     function getComputerChoice() {
         let computerChoice = Math.floor(Math.random() * 3) + 1;
