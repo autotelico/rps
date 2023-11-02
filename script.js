@@ -27,9 +27,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function playRound() {
         let playerChoice = getPlayerChoice();
-        displayPlayerChoice.textContent = `You chose "${playerChoice}"`;
+        displayPlayerChoice.textContent = `You chose '${playerChoice}'`;
         let computerChoice = getComputerChoice();
-        displayComputerChoice.textContent = `Computer chose "${computerChoice}"`;
+        displayComputerChoice.textContent = `Computer chose '${computerChoice}'`;
 
         if (playerChoice === computerChoice) {
             return 'Draw.';
