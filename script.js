@@ -37,9 +37,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (playerChoice === computerChoice) {
             return 'Draw.';
-        } else if (playerChoice === 'rock' && computerChoice === 'scissors'
-        || playerChoice === 'scissors' && computerChoice === 'paper'
-        || playerChoice === 'paper' && computerChoice === 'rock') {
+        } else if (playerChoice === 'rock' && computerChoice === 'scissors' ||
+        playerChoice === 'scissors' && computerChoice === 'paper' ||
+        playerChoice === 'paper' && computerChoice === 'rock') {
             return `You win! ${playerChoice} beats ${computerChoice}.`;
         } else {
             return `You lose. ${computerChoice} beats ${playerChoice}.`;
