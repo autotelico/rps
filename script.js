@@ -26,9 +26,6 @@ document.addEventListener("DOMContentLoaded", () => {
         return playerChoice;
     }
 
-    
-    
-
     function playRound() {
         let playerChoice = getPlayerChoice();
         displayPlayerChoice.textContent = `You chose '${playerChoice}'`;
@@ -66,6 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // User interface starts here
     startButton.addEventListener('click', () => {
         startButton.style.display = 'none';
+        bgMusic.play();
         showWinner();
     })
 

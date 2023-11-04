@@ -16,7 +16,7 @@ div.header {
 
 #header-title {
     font-size: 3em;
-    font-family: cursive;
+    font-family: Verdana;
 }
 
 .game-display {
@@ -45,7 +45,7 @@ div.header {
     font-weight: 700;
     width: 14vw;
     position: absolute;
-    font-family: cursive;
+    font-family: Verdana;
 }
 
 .game-display #play-again {
@@ -59,12 +59,12 @@ div.header {
     width: 12vw;
     height: 8vh;
     position: absolute;
-    font-family: cursive;
+    font-family: Verdana;
 }
 
 .game-display div.text-wrap p {
     font-size: 30px;
-    font-family: cursive;
+    font-family: Verdana;
 }
 
 .game-display .player-option {
