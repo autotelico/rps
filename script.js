@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
         
         if (!playAgainContainer.querySelector("button")) {
             let playAgainButton = document.createElement("button");
-            playAgainButton.innerHTML = 'Play Again';
+            playAgainButton.textContent = 'Play Again';
             playAgainButton.id = 'play-again';
             playAgainContainer.appendChild(playAgainButton);
         }
