@@ -17,7 +17,19 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-
+    // function playRound() {
+    //     let computerChoice = getComputerChoice();
+    //     let playerChoice = 
+    //     if (playerChoice === computerChoice) {
+    //         return 'Draw.';
+    //     } else if (playerChoice === 'rock' && computerChoice === 'scissors' ||
+    //     playerChoice === 'scissors' && computerChoice === 'paper' ||
+    //     playerChoice === 'paper' && computerChoice === 'rock') {
+    //         return `You win! ${playerChoice} beats ${computerChoice}.`;
+    //     } else {
+    //         return `You lose. ${computerChoice} beats ${playerChoice}.`;
+    //     }
+    // }
     
 
     // New UI
@@ -25,23 +37,19 @@ document.addEventListener("DOMContentLoaded", () => {
     optionButtons.forEach(button => {
 
         button.addEventListener('click', (e) => {
-            switch (e.target.id) {
-                case 'rock':
-                    playerAnswerDisplay.textContent = `You played ${e.target.id}.`
-                    break;
-                case 'paper':
-                    playerAnswerDisplay.textContent = `You played ${e.target.id}.`
-                    break;
-                case 'scissors':
-                    playerAnswerDisplay.textContent = `You played ${e.target.id}.`
-                    break;
-            }
-            let computerChoice = getComputerChoice();
-                computerAnswerDisplay.textContent = `Computer played ${computerChoice}.`
-            
-            
+           console.log(`Player played ${e.target.id}`);
+            return e.target.id;
+
+                    
         })
     })
     
+    function showWinner() {
+        let computerChoice = getComputerChoice();
+                computerAnswerDisplay.textContent = `Computer played ${computerChoice}.`
+            let playerChoice = e.target.id;
+            console.log(playerChoice);
+            
+    }
 
 });
