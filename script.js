@@ -21,9 +21,8 @@ document.addEventListener("DOMContentLoaded", () => {
     optionButtons.forEach(button => {
 
         button.addEventListener('click', (e) => {
-           console.log(`Player played ${e.target.id}`);
            let playerChoice = e.target.id;
-           playerAnswerDisplay.textContent = `You played ${e.target.id}`;
+           playerAnswerDisplay.textContent = `You played ${e.target.id}.`;
            let computerChoice = getComputerChoice();
            computerAnswerDisplay.textContent = `Computer played ${computerChoice}.`
            result.textContent = getWinner(playerChoice, computerChoice);
@@ -37,9 +36,9 @@ document.addEventListener("DOMContentLoaded", () => {
         } else if (playerChoice === 'rock' && computerChoice === 'scissors' ||
         playerChoice === 'scissors' && computerChoice === 'paper' ||
         playerChoice === 'paper' && computerChoice === 'rock') {
-            return `You win! ${playerChoice} beats ${computerChoice}.`;
+            return `You win!`;
         } else {
-            return `You lose. ${computerChoice} beats ${playerChoice}.`;
+            return `You lose.`;
         }   
     }
 });
