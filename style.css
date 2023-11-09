@@ -35,40 +35,12 @@ div.header {
 
 }
 
-.game-display #start-button {
-    cursor: pointer;
-    padding: 30px;
-    border-radius: 10px;
-    border: none;
-    font-size: 48px;
-    background: #93C48B;
-    font-weight: 700;
-    width: 14vw;
-    position: absolute;
-    font-family: Verdana;
-}
-
-.game-display #play-again {
-    cursor: pointer;
-    padding: 10px;
-    border-radius: 10px;
-    border: none;
-    font-size: 30px;
-    background: #93C48B;
-    font-weight: 700;
-    width: 12vw;
-    height: 8vh;
-    position: absolute;
-    font-family: Verdana;
-}
-
 .game-display div.text-wrap p {
     font-size: 30px;
     font-family: Verdana;
 }
 
-.game-display .player-option {
-    display: none;
+.game-display .option {
     cursor: pointer;
     font-size: 3em;
     background: #93C48B;
@@ -76,38 +48,24 @@ div.header {
     border-radius: 10px;
 } 
 
-.game-display .player-option-wrap {
+.game-display .button-container {
+    position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 30px;
-    margin-top: 35vh;
-    margin-right: 7vw;
+    top: 80%;
 }
 
-.play-again-container {
-    height: 100px;
-    width: 200px;
-    transform: translate(-50%, 100%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    bottom: 0;
-    top: 50%;
-    left: 50%;
-    margin: 0 auto;
-    margin-top: 30px;
-}
 
-#toggle-music-button {
+/* #toggle-music-button {
     cursor: pointer;
     margin-top: 40vh;
     margin-left: 45vw;
     position: fixed;
     max-height: 50px;
     max-width: 50px;
-}
+} */
 
 div.footer {
     background: #B6D369;

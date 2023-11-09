@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
     
-    const startButton = document.querySelector("#start-button");
     const displayPlayerChoice = document.querySelector(".display-player-choice");
     const displayComputerChoice = document.querySelector(".display-computer-choice");
     const result = document.querySelector("#result");
@@ -20,18 +19,8 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    function getPlayerChoice() {
-        let playerChoice = prompt("Choose: ");
-        playerChoice = playerChoice.toLowerCase().trim();
-        return playerChoice;
-    }
-
     function playRound() {
-        let playerChoice = getPlayerChoice();
-        displayPlayerChoice.textContent = `You chose '${playerChoice}'`;
         let computerChoice = getComputerChoice();
-        displayComputerChoice.textContent = `Computer chose '${computerChoice}'`;
-
         if (playerChoice === computerChoice) {
             return 'Draw.';
         } else if (playerChoice === 'rock' && computerChoice === 'scissors' ||
@@ -61,21 +50,38 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     // User interface starts here
-    startButton.addEventListener('click', () => {
-        startButton.style.display = 'none';
-        bgMusic.play();
-        showWinner();
-    })
 
-    toggleMusicButton.addEventListener('click', () => {
-        if (musicPlaying) {
-            bgMusic.pause();
-            toggleMusicButton.src = "./images/no-music-icon.png";
-        } else {
-            bgMusic.currentTime = 0;
-            bgMusic.play();
-            toggleMusicButton.src = "./images/music-icon.png";
-        }
-        musicPlaying = !musicPlaying;
+
+    // New UI
+    const optionButtons = document.querySelectorAll('.option');
+    const playerP = document.querySelector('.display-player-choice');
+
+    optionButtons.forEach(button => {
+
+        button.addEventListener('click', (e) => {
+            console.log("Event click happened");
+            switch (e.target.id) {
+                case 'rock':
+                    playerP.textContent = `You played ${e.target.id}.`
+                    break;
+                case 'paper':
+                    playerP.textContent = `You played ${e.target.id}.`
+                    break;
+                case 'scissors':
+                    playerP.textContent = `You played ${e.target.id}.`
+                    break;
+            }
+            let computerChoice = getComputerChoice();
+                switch (computerChoice) {
+                    case 1:
+                return 'rock';
+                    case 2:
+                return 'paper';
+                    case 3:
+                return 'scissors';
+                }
+        })
     })
+    
+
 });

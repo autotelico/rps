@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,12 +8,13 @@
   <link rel="stylesheet" href="./style.css">
   <script src="./script.js" defer></script>
 </head>
+
 <body>
+
   <div class="header">
     <h1 id="header-title">Rock Paper Scissors</h1>
   </div>
   <div class="game-display">
-    <button id="start-button">Start</button>
     <div class="text-wrap">
       <p class="display-player-choice"></p>
     </div>
@@ -22,16 +24,18 @@
     <div class="text-wrap">
       <p id="result"></p>
     </div>
-    <div class="play-again-container"></div>
-    <img id="toggle-music-button" src="./images/music-icon.png"></img>
+    <div class="button-container">
+      <button class="option" id="rock">Rock</button>
+      <button class="option" id="paper">Paper</button>
+      <button class="option" id="scissors">Scissors</button>
+    </div>
   </div>
   <div class="footer">
     <p><a href="https://github.com/autotelico" target="_blank">Developed by: Henrique Heron © 2023</a></p>
   </div>
 
-
-  <audio id="background-music" autoplay loop>
+  <!-- <audio id="background-music" autoplay loop>
     <source src="./music/funky-night.mp3" type="audio/mpeg">
-  </audio>
+  </audio> -->
 </body>
 </html>
