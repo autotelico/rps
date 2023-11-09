@@ -17,39 +17,29 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // function playRound() {
-    //     let computerChoice = getComputerChoice();
-    //     let playerChoice = 
-    //     if (playerChoice === computerChoice) {
-    //         return 'Draw.';
-    //     } else if (playerChoice === 'rock' && computerChoice === 'scissors' ||
-    //     playerChoice === 'scissors' && computerChoice === 'paper' ||
-    //     playerChoice === 'paper' && computerChoice === 'rock') {
-    //         return `You win! ${playerChoice} beats ${computerChoice}.`;
-    //     } else {
-    //         return `You lose. ${computerChoice} beats ${playerChoice}.`;
-    //     }
-    // }
-    
-
     // New UI
-    
     optionButtons.forEach(button => {
 
         button.addEventListener('click', (e) => {
            console.log(`Player played ${e.target.id}`);
-            return e.target.id;
-
-                    
+           let playerChoice = e.target.id;
+           playerAnswerDisplay.textContent = `You played ${e.target.id}`;
+           let computerChoice = getComputerChoice();
+           computerAnswerDisplay.textContent = `Computer played ${computerChoice}.`
+           result.textContent = getWinner(playerChoice, computerChoice);
         })
     })
     
-    function showWinner() {
-        let computerChoice = getComputerChoice();
-                computerAnswerDisplay.textContent = `Computer played ${computerChoice}.`
-            let playerChoice = e.target.id;
-            console.log(playerChoice);
-            
+    
+    function getWinner(playerChoice, computerChoice) {
+        if (playerChoice === computerChoice) {
+            return 'Draw.';
+        } else if (playerChoice === 'rock' && computerChoice === 'scissors' ||
+        playerChoice === 'scissors' && computerChoice === 'paper' ||
+        playerChoice === 'paper' && computerChoice === 'rock') {
+            return `You win! ${playerChoice} beats ${computerChoice}.`;
+        } else {
+            return `You lose. ${computerChoice} beats ${playerChoice}.`;
+        }   
     }
-
 });
